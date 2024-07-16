@@ -1,0 +1,19 @@
+<!-- accounts/templates/accounts/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Bem-vindo à página inicial!</h1>
+    <p>Seu conteúdo da página inicial aqui.</p>
+
+    <!-- Formulário para logout -->
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>
