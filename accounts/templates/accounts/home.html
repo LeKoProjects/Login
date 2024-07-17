@@ -1,19 +1,44 @@
-<!-- accounts/templates/accounts/home.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <!-- Incluir arquivos estáticos do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* Cor de fundo leve */
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 100px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        .btn-logout {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem-vindo à página inicial!</h1>
-    <p>Seu conteúdo da página inicial aqui.</p>
+    <div class="container">
+        <h1>Bem-vindo à página inicial!</h1>
+        <!-- Formulário para logout -->
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger btn-logout">Logout</button>
+        </form>
+    </div>
 
-    <!-- Formulário para logout -->
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
+    <!-- Incluir os arquivos JavaScript do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
